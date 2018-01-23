@@ -25,22 +25,9 @@
         <a class="nav-link" href="#" @click="endDay">End Day</a>
       </li>
       <!-- TODO: Implement Save and Load -->
-      <li class="nav-item dropdown">
-        <a 
-          class="nav-link dropdown-toggle" 
-          href="#" 
-          id="navbarDropdown" 
-          role="button" 
-          data-toggle="dropdown" 
-          aria-haspopup="true" 
-          aria-expanded="false"
-        >
-          Save & Load <span class="caret"></span>
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Save</a>
-          <a class="dropdown-item" href="#">Load</a>
-        </div>
+      <li class="btn-group ml-1 mr-3" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-success">Save</button>
+        <button type="button" class="btn btn-secondary">Load</button>
       </li>
     </ul>
 
