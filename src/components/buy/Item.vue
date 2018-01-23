@@ -4,7 +4,7 @@
 <div class="col-sm-6">
   <div class="card border-success mb-3" style="max-width: 18rem;">
     <div class="card-header">{{item.name}}
-      <small>(Price: ☋{{item.price}})</small>
+      <small>(Price: {{item.price}}☋)</small>
     </div>
     <div class="card-body text-success">
       <div class="input-group mb-3">
@@ -19,6 +19,7 @@
             class="btn btn-success" 
             type="button"
             @click="buyItem"
+            :disabled="quantity <= 0  || !Number.isInteger(parseFloat(quantity))"
           >
             Buy
           </button>
@@ -44,6 +45,7 @@ export default {
         itemPrice: this.item.price,
         quantity: this.quantity
       };
+      this.quantity = 0;
     }
   }
 };
