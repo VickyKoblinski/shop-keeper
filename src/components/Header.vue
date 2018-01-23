@@ -4,10 +4,23 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <router-link to="/" class="navbar-brand">Shop Keeper</router-link>
 
-  <!-- TODO: Wire up mobile button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <!-- Mobile buttons -->
+  <div class="btn-group navbar-toggler" role="group">
+    <router-link to="/sell" activeClass="active" tag="button" class="btn btn-primary">
+      Sell
+    </router-link>
+    <router-link to="/buy" activeClass="active" tag="button" class="btn btn-primary">
+      Buy
+    </router-link>
+  </div>
+  <div class="btn-group navbar-toggler" role="group">
+    <button type="button" class="btn btn-info" @click="endDay">End Day</button>
+    <button type="button" class="btn btn-success" @click="save">Save</button>
+    <button type="button" class="btn btn-secondary" @click="load">Load</button>
+  </div>
+  <div class="btn-group navbar-toggler" role="group">
+    <button type="button" class="btn btn-secondary disabled">Credits: {{credits | currency}}</button>
+  </div>
 
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">

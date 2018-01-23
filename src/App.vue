@@ -1,13 +1,18 @@
 <template>
-  <div class="container">
+  <div>
     <app-header></app-header>
-    <div class="row">
+    <div class="container row mx-auto"> 
       <div class="col-xs-12">
         <transition name="slide" mode="out-in">
           <router-view></router-view>
         </transition>
       </div>
     </div>
+    <nav class="navbar fixed-bottom navbar-dark bg-dark">
+      <a class="navbar-brand pl-5" href="https://github.com/VickyKoblinski/shop-keeper">
+        Check out this project on Github! 
+      </a>
+    </nav>
   </div>
 </template>
 
@@ -25,10 +30,6 @@ export default {
 </script>
 
 <style>
-body {
-  padding: 30px;
-}
-
 .slide-enter-active {
   animation: slide-in 200ms ease-out forwards;
 }
