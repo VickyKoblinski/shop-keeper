@@ -19,9 +19,9 @@
             class="btn btn-info" 
             type="button"
             @click="sellItem"
-            :disabled="quantity <= 0  || !Number.isInteger(parseFloat(quantity))"
+            :disabled="insufficientQuantity || quantity <= 0 || !Number.isInteger(parseFloat(quantity))"
           >
-            Sell
+            {{insufficientQuantity ? "Insufficient Quanitity" : "Sell"}}
           </button>
         </div>
       </div>
@@ -40,6 +40,11 @@ export default {
     };
   },
   props: ["item"],
+  computed: {
+    insufficientQuantity() {
+      return this.quantity > this.item.quantity;
+    }
+  },
   methods: {
     ...mapActions({
       sellItemAction: "sellItem"

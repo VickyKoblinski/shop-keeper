@@ -16,12 +16,13 @@
         >
         <div class="input-group-append">
           <button 
-            class="btn btn-success" 
+            class="btn"
+            :class="insufficentCredits ? 'btn-danger' : 'btn-success'" 
             type="button"
             @click="buyItem"
-            :disabled="quantity <= 0  || !Number.isInteger(parseFloat(quantity))"
+            :disabled="insufficentCredits || quantity <= 0  || !Number.isInteger(parseFloat(quantity))"
           >
-            Buy
+            {{insufficentCredits ? 'Insufficent Funds' : 'Button' }}
           </button>
         </div>
       </div>
@@ -38,6 +39,14 @@ export default {
     };
   },
   props: ["item"],
+  computed: {
+    credits() {
+      return this.$store.getters.credits;
+    },
+    insufficentCredits() {
+      return this.quantity * this.item.price > this.credits;
+    }
+  },
   methods: {
     buyItem() {
       const order = {
