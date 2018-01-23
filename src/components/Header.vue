@@ -47,7 +47,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["RANDOMIZE_ITEMS"]),
+    ...mapActions(["RANDOMIZE_ITEMS", "loadData"]),
     endDay() {
       this.RANDOMIZE_ITEMS();
     },
@@ -59,7 +59,9 @@ export default {
       };
       this.$http.put("data.json", data);
     },
-    load() {}
+    load() {
+      this.loadData();
+    }
   }
 };
 </script>

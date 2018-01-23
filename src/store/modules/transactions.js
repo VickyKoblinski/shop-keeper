@@ -51,6 +51,11 @@ const mutations = {
 
     // Update credits
     state.credits += itemPrice * quantity;
+  },
+  SET_INVENTORY(state, { credits, inventory }) {
+    state.credits = credits;
+    console.log(inventory);
+    state.items = inventory ? inventory : [];
   }
 };
 

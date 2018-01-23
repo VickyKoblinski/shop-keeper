@@ -6,6 +6,8 @@ import Vuex from 'vuex';
 import items from './modules/items';
 import transactions from './modules/transactions';
 
+import * as actions from './actions';
+
 Vue.use(Vuex);
 
 /** Vuex - Modules
@@ -20,6 +22,7 @@ Vue.use(Vuex);
  * https://vuex.vuejs.org/en/modules.html
  */
 export default new Vuex.Store({
+  actions,
   modules: {
     items,
     transactions
