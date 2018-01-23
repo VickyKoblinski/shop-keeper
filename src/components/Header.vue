@@ -44,12 +44,21 @@
         </div>
       </li>
     </ul>
+
+    <!-- Credits display -->
+    <strong class="navbar-text navbar-right">Credits: {{credits}}☋</strong>
   </div>
 </nav>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    credits() {
+      return this.$store.getters.credits;
+    }
+  }
+};
 </script>
 
 <style scoped>
