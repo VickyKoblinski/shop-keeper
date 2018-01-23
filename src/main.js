@@ -7,6 +7,8 @@ import store from './store/store'
 // Wires up our router to global Vue object
 Vue.use(VueRouter);
 
+Vue.filter('currency', value => value.toLocaleString() + '☋')
+
 const router = new VueRouter({
   mode: 'history', // Option for no # in URL
   routes

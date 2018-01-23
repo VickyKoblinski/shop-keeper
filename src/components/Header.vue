@@ -46,7 +46,7 @@
     </ul>
 
     <!-- Credits display -->
-    <strong class="navbar-text navbar-right">Credits: {{credits}}☋</strong>
+    <strong class="navbar-text navbar-right">Credits: {{credits | currency}}</strong>
   </div>
 </nav>
 </template>

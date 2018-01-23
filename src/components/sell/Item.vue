@@ -4,7 +4,7 @@
 <div class="col-sm-6">
   <div class="card border-info mb-3" style="max-width: 24rem; min-width: 20rem;">
     <div class="card-header">{{item.name}}
-      <small>(Price: {{item.price}}☋ | Quantity: {{item.quantity}})</small>
+      <small>(Price: {{item.price | currency}} | Quantity: {{item.quantity}})</small>
     </div>
     <div class="card-body text-info">
       <div class="input-group mb-3">

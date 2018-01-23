@@ -6,7 +6,7 @@
     <h6>Save Data</h6>
     <h6>End Day to begin a new Day!</h6>
     <hr>
-    <p>Your Credits: {{credits}}☋</p>
+    <p>Your Credits: {{credits | currency}}</p>
   </div>
 </template>
 
