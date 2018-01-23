@@ -21,9 +21,8 @@
 
     <!-- Righthand side of Navigation -->
     <ul class="navbar-nav my-2 my-lg-0">
-      <!-- TODO: End Day -->
       <li class="nav-item">
-        <a class="nav-link" href="#">End Day</a>
+        <a class="nav-link" href="#" @click="endDay">End Day</a>
       </li>
       <!-- TODO: Implement Save and Load -->
       <li class="nav-item dropdown">
@@ -52,10 +51,18 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   computed: {
     credits() {
       return this.$store.getters.credits;
+    }
+  },
+  methods: {
+    ...mapActions(["RANDOMIZE_ITEMS"]),
+    endDay() {
+      this.RANDOMIZE_ITEMS();
     }
   }
 };

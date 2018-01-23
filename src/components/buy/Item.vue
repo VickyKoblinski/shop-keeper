@@ -22,7 +22,7 @@
             @click="buyItem"
             :disabled="insufficentCredits || quantity <= 0  || !Number.isInteger(parseFloat(quantity))"
           >
-            {{insufficentCredits ? 'Insufficent Funds' : 'Button' }}
+            {{insufficentCredits ? 'Insufficent Funds' : 'Buy' }}
           </button>
         </div>
       </div>

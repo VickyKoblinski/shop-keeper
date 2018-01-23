@@ -43,7 +43,10 @@ const mutations = {
     state.items = items;
   },
   RND_ITEMS(state) {
-    //TODO: Randomize item data at end of day
+    state.items.forEach(item => {
+      //Randomizes the new price by multiplying current price by a number from 0.5 to 1.5
+      item.price = Math.round(item.price * (1 + Math.random() - 0.5));
+    });
   }
 };
 
