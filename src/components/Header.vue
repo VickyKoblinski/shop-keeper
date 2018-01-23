@@ -26,8 +26,8 @@
       </li>
       <!-- TODO: Implement Save and Load -->
       <li class="btn-group ml-1 mr-3" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-success">Save</button>
-        <button type="button" class="btn btn-secondary">Load</button>
+        <button type="button" class="btn btn-success" @click="save">Save</button>
+        <button type="button" class="btn btn-secondary" @click="load">Load</button>
       </li>
     </ul>
 
@@ -50,7 +50,16 @@ export default {
     ...mapActions(["RANDOMIZE_ITEMS"]),
     endDay() {
       this.RANDOMIZE_ITEMS();
-    }
+    },
+    save() {
+      const data = {
+        credits: this.$store.getters.credits,
+        inventory: this.$store.getters.inventory,
+        items: this.$store.getters.items
+      };
+      this.$http.put("data.json", data);
+    },
+    load() {}
   }
 };
 </script>

@@ -3,9 +3,14 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import { routes } from './routes'
 import store from './store/store'
+import VueResource from 'vue-resource';
+import config from '../config';
 
-// Wires up our router to global Vue object
+// Wires up * to global Vue object
 Vue.use(VueRouter);
+Vue.use(VueResource);
+
+Vue.http.options.root = config.SERVER_ADDRESS;
 
 Vue.filter('currency', value => value.toLocaleString() + '☋')
 
