@@ -2,7 +2,11 @@
 
 <template>
   <div class="row">
-    <app-item v-for="item in items" :key="item.id"></app-item>
+    <app-item 
+      v-for="item in items" 
+      :key="item.id"
+      :item="item"
+    ></app-item>
   </div>
 </template>
 
@@ -30,5 +34,7 @@ export default {
 </script>
 
 <style scoped>
-
+div {
+  padding-top: 10px;
+}
 </style>
