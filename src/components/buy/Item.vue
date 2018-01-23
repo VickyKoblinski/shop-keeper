@@ -45,6 +45,7 @@ export default {
         itemPrice: this.item.price,
         quantity: this.quantity
       };
+      this.$store.dispatch("BUY_ITEM", order);
       this.quantity = 0;
     }
   }

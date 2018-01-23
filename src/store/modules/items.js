@@ -55,7 +55,7 @@ const mutations = {
  * https://vuex.vuejs.org/en/actions.html
  */
 const actions = {
-  BUY_ITEM: ({ commit }, order) => commit(),
+  BUY_ITEM: ({ commit }, order) => commit('BUY_ITEM', order), //from modules/transactions
   INIT_ITEMS: ({ commit }) => commit('SET_ITEMS', items),
   RANDOMIZE_ITEMS: ({ commit }) => commit('RND_ITEMS')
 };
