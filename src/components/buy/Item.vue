@@ -2,7 +2,7 @@
 
 <template>
 <div class="col-sm-6">
-  <div class="card border-success mb-3" style="max-width: 18rem;">
+  <div class="card border-success mb-3" style="max-width: 26rem;">
     <div class="card-header">{{item.name}}
       <small>(Price: {{item.price}}☋)</small>
     </div>
